@@ -1,0 +1,21 @@
+antecedents,consequents,support,confidence,lift
+"Have you ever had suicidal thoughts ?_Yes, Depression_No",Age_bin_45-55,0.14556962025316456,0.36552567237163813,1.2389269489296117
+Age_bin_45-55,"Have you ever had suicidal thoughts ?_Yes, Depression_No",0.14556962025316456,0.4933993399339934,1.2389269489296117
+"Gender_Female, WorkPressure_bin_Low","Family History of Mental Illness_Yes, Depression_No",0.10077896786757547,0.5404699738903395,1.22937466929209
+"WorkPressure_bin_Low, Family History of Mental Illness_No","Gender_Male, Depression_No",0.10759493670886076,0.5580808080808081,1.1903405813063135
+"Family History of Mental Illness_Yes, Gender_Female, Depression_No",WorkPressure_bin_Low,0.10077896786757547,0.46621621621621623,1.176422737233548
+"WorkPressure_bin_Low, Have you ever had suicidal thoughts ?_No","Gender_Male, Depression_No",0.10905550146056475,0.5490196078431373,1.1710137845376989
+Age_bin_45-55,"Dietary Habits_Moderate, Depression_No",0.10077896786757547,0.3415841584158416,1.167410751058467
+"Dietary Habits_Moderate, Depression_No",Age_bin_45-55,0.10077896786757547,0.34442595673876875,1.167410751058467
+"Gender_Male, WorkPressure_bin_Medium, Depression_No",Have you ever had suicidal thoughts ?_No,0.10954235637779941,0.6048387096774193,1.1665152203543843
+"Sleep Duration_Less than 5 hours, Depression_No",FinancialStress_bin_Low,0.10516066212268745,0.48214285714285715,1.1596269655403146
+"Gender_Female, FinancialStress_bin_Low","Family History of Mental Illness_Yes, Depression_No",0.1017526777020448,0.5097560975609756,1.1595116549172135
+"Have you ever had suicidal thoughts ?_Yes, Depression_No",WorkPressure_bin_Low,0.18257059396299902,0.45843520782396086,1.1567885956639012
+WorkPressure_bin_Low,"Have you ever had suicidal thoughts ?_Yes, Depression_No",0.18257059396299902,0.4606879606879607,1.1567885956639012
+"WorkPressure_bin_Medium, Depression_No",Age_bin_45-55,0.12122687439143136,0.34109589041095895,1.156123694561237
+Age_bin_45-55,"WorkPressure_bin_Medium, Depression_No",0.12122687439143136,0.4108910891089109,1.156123694561237
+"Gender_Female, WorkPressure_bin_Low",Family History of Mental Illness_Yes,0.1056475170399221,0.566579634464752,1.154518421816072
+"Sleep Duration_More than 8 hours, Depression_No",WorkPressure_bin_Low,0.10223953261927946,0.45652173913043476,1.1519602606559127
+Have you ever had suicidal thoughts ?_No,"Age_bin_35-45, Depression_No",0.1611489776046738,0.3107981220657277,1.15023304995136
+"Age_bin_35-45, Depression_No",Have you ever had suicidal thoughts ?_No,0.1611489776046738,0.5963963963963964,1.1502330499513598
+"Gender_Female, WorkPressure_bin_Low, Depression_No",Family History of Mental Illness_Yes,0.10077896786757547,0.5640326975476839,1.1493285325029194

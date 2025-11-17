@@ -1,0 +1,6 @@
+Attribute,Count,Mean,Std_Dev,Min,Q1,Median,Q3,Max
+Age,2054,42.17,11.46,18,35.0,43.0,51.75,60
+Work Pressure,2054,3.02,1.42,1,2.0,3.0,4.0,5
+Job Satisfaction,2054,3.02,1.42,1,2.0,3.0,4.0,5
+Work Hours,2054,5.93,3.77,0,3.0,6.0,9.0,12
+Financial Stress,2054,2.98,1.41,1,2.0,3.0,4.0,5
