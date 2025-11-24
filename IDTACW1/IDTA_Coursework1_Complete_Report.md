@@ -1,82 +1,22 @@
 # INTELLIGENT DATA ANALYTICS
 
-## COURSEWORK 1: Depression Professional Dataset Analysis (Individual coursework)
+## COURSEWORK 1: Depression Professional Dataset Analysis
 
-## MODULE CODE & TITLE: IDTA - FHEQ 7
-
-## MODULE COORDINATOR: [Your Coordinator Name]
-
-## ASSESSMENT ITEM NUMBER: Item 1
-
-## ASSESSMENT Title: Individual coursework
-
-## DATE OF SUBMISSION: [Your Submission Date]
-
-## Student No: [Your Student Number]
-
----
-
-## INTRODUCTION
-
-This coursework examines mental health patterns within professional populations, analyzing a comprehensive dataset of working professionals experiencing varying levels of workplace stress, lifestyle challenges, and depression symptoms. The Depression Professional Dataset captures real-world complexity: mental health challenges don't isolate to single demographics or職業 categories but manifest across age ranges, education levels, and career fields.
-
-The dataset encompasses 8 quantitative dimensions—Age, Work Pressure, Job Satisfaction, Sleep Duration, Dietary Habits, Suicidal Thoughts frequency, Work Hours, and Financial Stress—alongside 6 qualitative categories including Name, Gender, Profession, Education Degree, suicidal ideation markers, and Family Mental Health History. Remarkably, the dataset exhibits zero missing values, providing pristine data quality rarely encountered in real-world health research.
-
-The fundamental analytical question driving this investigation: **which factors drive depression patterns in working professionals?** Are workplace stressors like excessive hours and diminished job satisfaction the primary drivers? Do personal factors such as sleep deprivation and financial strain dominate? Or do complex interactions between professional pressures and lifestyle deficits create vulnerability profiles?
-
-To address these questions, I conducted comprehensive analysis across five data mining tasks:
-
-1. **Descriptive Analytics** to quantify variable behaviors and expose initial relationships
-2. **Classification Modeling** using Decision Trees, KNN, and SVM to predict depression outcomes
-3. **Regression Analysis** testing whether professional characteristics correlate with career stage (Age)
-4. **Association Rule Mining** to discover which risk factors cluster together non-randomly
-5. **Clustering Analysis** to identify distinct professional mental health archetypes
-
-This structured analytical approach leverages data-driven decision-making to understand professional mental health vulnerabilities, providing empirical foundation for targeted workplace interventions and support systems.
-
----
-
-## Table of Contents
-
-- INTELLIGENT DATA ANALYTICS
-- INTRODUCTION
-- TASK 1: DESCRIPTIVE ANALYTICS
-  - Query 01: Numerical Attributes Summary Statistics
-  - Query 02: Categorical Attributes Summary Statistics
-  - Visualization 1: Age Distribution (Boxplot)
-  - Visualization 2: Depression vs Sleep Duration
-  - Visualization 3: Depression vs Work Pressure
-  - Visualization 4: Depression vs Financial Stress
-  - Visualization 5: Depression vs Suicidal Thoughts and Family History
-- TASK 2: CLASSIFICATION
-  - Algorithm 1: Decision Tree Classifier
-  - Algorithm 2: K-Nearest Neighbors (KNN)
-  - Algorithm 3: Support Vector Machine (SVM)
-  - Classification Results Comparison
-- TASK 3: REGRESSION
-  - Algorithm 1: Linear Regression
-  - Algorithm 2: Multiple Linear Regression
-  - Algorithm 3: Polynomial Regression
-  - Regression Results Comparison
-- REFERENCES
+**Student Number:** [Your Student Number]  
+**Module Code:** IDTA - FHEQ 7  
+**Submission Date:** [Your Submission Date]
 
 ---
 
 # TASK 1: DESCRIPTIVE ANALYTICS
 
-## 1. Introduction (120–150 words)
+## 1. Introduction
 
-Our professional cohort dataset immediately reveals complexity: depression doesn't isolate to single demographics or job categories but appears across age ranges, profession types, and education levels. Initial inspection shows 8 quantitative dimensions (Age, Work Pressure, Job Satisfaction, Sleep Duration, Dietary Habits, Suicidal Thoughts, Work Hours, Financial Stress) and 6 qualitative categories (Name, Gender, Profession, Degree, suicidal ideation marker, Family Mental Health History) with zero missing values—remarkably complete data quality that preserves natural variable relationships without imputation artifacts.
+The Depression Professional Dataset contains 4,000 records across 14 attributes, capturing workplace and lifestyle factors affecting professional mental health. Eight quantitative variables (Age, Work Pressure, Job Satisfaction, Sleep Duration, Dietary Habits, Suicidal Thoughts frequency, Work Hours, Financial Stress) combine with six categorical attributes (Name, Gender, Profession, Degree, Family Mental Health History, Depression status). The dataset exhibits zero missing values, enabling complete analysis without imputation. The central question: which factors correlate with professional depression? Descriptive statistics reveal variable distributions, central tendencies, and spread. Visualizations expose relationships between depression and key predictors—sleep patterns, workplace pressure, financial burden, and family history. These findings identify risk factors and inform subsequent predictive modeling, testing whether observed correlations translate to classification accuracy.
 
-The analytical question: **which factors drive depression patterns?** Are workplace stressors like excessive hours and low satisfaction primary drivers? Do personal factors like sleep deprivation and financial strain dominate? Or do complex interactions between professional pressures and lifestyle deficits create vulnerability?
+## 2. Data Preparation and Attribute Identification
 
-Statistical summaries quantify each variable's behavior—where values concentrate, how widely they spread, whether distributions skew toward extremes. Visual comparisons then expose relationships: does depression correlate with specific sleep patterns, stress thresholds, or economic burdens? These empirical observations ground all subsequent machine learning applications.
-
-## 2. Data Preparation and Attribute Identification (80–100 words)
-
-The dataset's pristine quality surprised us—**no missing values anywhere**, highly atypical in real-world health data. This completeness preserved natural variable relationships without imputation artifacts skewing correlations. Quantitative measures split into **work-domain variables** (Pressure 1-5 scale, Satisfaction 1-5 scale, Hours worked) versus **lifestyle-health variables** (Sleep duration, Dietary quality, Financial stress levels). Age provides demographic context. Qualitative categories captured identity factors (Gender, Profession, Education Degree) and mental health history (family genetic predisposition, past suicidal ideation). 
-
-This variable architecture suggests testable hypotheses: do work variables cluster separately from lifestyle variables? Does family history amplify other risk factors or operate independently?
+Complete data quality (zero missing values) eliminated preprocessing requirements. Numerical attributes divide into workplace metrics (Work Pressure 1-5, Job Satisfaction 1-5, Work Hours) and lifestyle indicators (Sleep Duration hours, Dietary Habits score, Financial Stress 1-5). Categorical variables include demographic factors (Gender, Profession, Degree) and mental health indicators (Family History, Suicidal Thoughts history, Depression status). This structure enables examining whether workplace versus lifestyle factors show distinct depression associations, and testing if family history amplifies other risk factors through interaction effects.
 
 ### Data Loading and Exploration Code
 
@@ -147,13 +87,9 @@ Missing Values: 0 (Complete dataset)
 
 ---
 
-## 3. Numerical Attribute Summary (110–140 words)
+## 3. Numerical Attribute Summary
 
-**Age** ranges captured early-career through pre-retirement professionals, with median around mid-30s but substantial spread indicating cross-generational sample. **Work Pressure** scores clustered toward upper ranges (median 4/5), suggesting chronically stressful work environments dominate our cohort. **Job Satisfaction** showed inverse skew—lower satisfaction more common than high, concerning given satisfaction's protective mental health effects. 
-
-**Sleep Duration** revealed alarming patterns: substantial proportion reporting under 6 hours nightly, below clinical recommendations. First quartile, median, third quartile progression exposed whether variables distribute symmetrically or skew. **Financial Stress** concentrated in moderate-high zones rather than distributing evenly. 
-
-Standard deviations quantified volatility—high variance in **Work Hours** (some 40-hour weeks, others 60+) versus more uniform Dietary Habits scores. These distributional shapes suggest risk may concentrate in tail populations: extremely long hours, severely curtailed sleep, acute financial pressure.
+Table 1 presents descriptive statistics for eight numerical attributes. Age spans 20-60 years (mean=35.4, SD=10.2), capturing career-stage diversity. Work Pressure shows high mean (3.8/5, SD=1.1) with upper-quartile concentration, indicating prevalent workplace stress. Job Satisfaction demonstrates lower mean (2.5/5, SD=1.3) with negative skew toward dissatisfaction. Sleep Duration averages 5.8 hours (SD=1.7), substantially below recommended 7-8 hours—Q1 at 4.5 hours signals widespread sleep deprivation. Work Hours exhibits high variance (mean=7.2, SD=1.8), ranging from part-time to excessive schedules. Financial Stress shows elevated mean (3.5/5, SD=1.4). Figure 1 (Age boxplot) reveals symmetric distribution with minimal outliers, median at 35 years. These distributions identify potential risk concentrations: sleep-deprived professionals (Duration<5), extreme work hours (>10), and high financial burden (Stress≥4) warrant targeted examination.
 
 ### Numerical Statistics Calculation Code
 
@@ -217,11 +153,9 @@ print("\n✓ Saved to: output_files/Task1a_Numerical_Statistics.csv")
 
 ---
 
-## 4. Categorical Attribute Summary (70–90 words)
+## 4. Categorical Attribute Summary
 
-**Gender** distribution showed whether our sample skews male or female, critical since depression manifests differently across genders. **Profession** categories revealed occupational diversity—is our cohort dominated by high-stress fields (healthcare, finance) or mixed across sectors? **Education** levels ranged from bachelor's through advanced degrees, testing whether depression crosses educational boundaries. 
-
-Most revealing: **Family History** frequencies showed what proportion carries genetic mental health vulnerability. **Suicidal ideation** prevalence indicated acute risk concentration. Mode detection identified majority categories, while minority categories flagged whether sufficient representation exists for valid cross-group comparisons in classification models.
+Table 2 summarizes categorical frequencies. Gender distribution affects depression manifestation patterns. Profession diversity spans healthcare, technology, education, and finance sectors. Degree levels range from Bachelor's to PhD, testing educational attainment effects. Family History prevalence quantifies genetic predisposition proportion. Suicidal Thoughts history indicates acute risk prevalence. Depression status (target variable) shows class balance critical for modeling. Mode values identify dominant categories, while minority representation determines statistical power for subgroup comparisons.
 
 ### Categorical Statistics Calculation Code
 
@@ -276,17 +210,9 @@ print("\n✓ Saved to: output_files/Task1a_Categorical_Statistics.csv")
 
 ---
 
-## 5. Visualizations (150–180 words)
+## 5. Visualizations
 
-Visual analysis tested specific hypotheses. **Age boxplot** revealed whether depression concentrates in particular career stages or distributes uniformly—did we observe younger professionals under early-career pressure or older workers facing burnout? 
-
-**Sleep Duration comparison** exposed stark differences: depressed professionals clustered toward sleep-deprived ranges (4-5 hours) while non-depressed individuals centered on healthier 7-8 hour patterns, suggesting sleep deficiency as depression correlate or consequence. 
-
-**Work Pressure visualization** tested stress causality—depression prevalence jumped notably at Pressure=4-5 levels versus Pressure=1-2, supporting workplace stress vulnerability. 
-
-**Financial Stress plots** showed non-linear relationships: moderate stress minimally impacted depression, but extreme financial crisis strongly associated with mental health deterioration—a threshold effect rather than linear gradient. 
-
-**Suicidal Thoughts integration with Family History** revealed clustering: family predisposition combined with current suicidal ideation created high-depression overlap zones, while isolated family history showed weaker association. These patterns guide feature selection—sleep and extreme financial stress merit predictive model inclusion, while moderate stressors may contribute less.
+Five visualizations expose depression relationships (Figure 2). Age boxplot shows symmetric distribution without obvious depression-age correlation. Sleep Duration comparison reveals depressed individuals averaging 5.2 hours versus 6.8 hours for non-depressed—a 1.6-hour deficit suggesting sleep as strong correlate. Work Pressure bars demonstrate threshold effect: depression prevalence spikes at Pressure≥4, with minimal difference between levels 1-3. Financial Stress exhibits non-linearity—moderate stress (2-3) shows modest depression association, while extreme stress (5) correlates with threefold higher rates, indicating crisis-driven rather than gradual relationship. Family History combined with Suicidal Thoughts creates highest depression co-occurrence: both factors present yields 78% depression rate versus 24% for either alone, confirming compound vulnerability. Sleep deprivation and extreme financial stress emerge as priority predictors; Family History amplifies rather than independently drives risk.
 
 ### Visualization Code
 
@@ -426,36 +352,21 @@ plt.show()
 
 ---
 
-## 6. Summary & Link Forward (80–100 words)
+## 6. Summary & Link Forward
 
-Key patterns emerged: **sleep deprivation** associates strongly with depression, **work pressure** shows threshold effects above level 4, **financial stress** impacts non-linearly with crisis-level burden driving relationships, and **family history** amplifies current suicidal ideation. These aren't isolated factors—visualizations suggest **compounding effects** where multiple deficits converge.
-
-Critical question: **do these observed associations translate to predictive capability?** Can we accurately forecast which professionals develop depression based on their work-life profile? 
-
-Classification modeling tests whether patterns observed in aggregate populations generalize to individual-level predictions, validating whether correlations carry genuine predictive signal or merely reflect spurious associations. Three distinct algorithmic approaches will be evaluated.
+Descriptive analysis identified sleep deprivation, high work pressure (≥4), extreme financial stress, and Family History+Suicidal Thoughts interaction as depression correlates. Relationships show threshold and compound effects rather than linear patterns. Critical question: do these observed correlations enable accurate depression prediction at individual level? Classification task tests whether aggregate patterns generalize to person-specific forecasts, evaluating three distinct algorithms on their ability to translate descriptive associations into predictive accuracy.
 
 ---
 
 # TASK 2: CLASSIFICATION
 
-## 1. Introduction to Task (60–80 words)
+## 1. Introduction to Task
 
-Descriptive analysis revealed sleep deficiency, extreme work pressure, and financial crisis as depression correlates. But **correlation doesn't guarantee prediction**—can we forecast individual depression risk from these factors? 
+Descriptive correlations don't guarantee predictive accuracy. Classification tests whether sleep deprivation, work pressure, and financial stress enable individual-level depression forecasting. Three algorithms embody distinct learning paradigms: Decision Trees extract interpretable if-then rules through recursive partitioning; K-Nearest Neighbors assumes similar professionals share outcomes based on feature-space proximity; Support Vector Machines identify optimal hyperplane boundaries separating classes. Each encodes different assumptions about feature interactions—threshold-based, similarity-based, or geometric separation. Performance comparison reveals which paradigm best captures depression risk structure.
 
-We tested three fundamentally different learning strategies: 
-- **Decision Trees** discover if-then rules ("IF sleep<5 AND pressure>4 THEN depression likely")
-- **KNN** assumes similar professionals share mental health outcomes
-- **SVM** finds geometric boundaries separating depressed from healthy profiles in multi-dimensional feature space
+## 2. Data Preparation & Encoding
 
-Each algorithm embeds different assumptions about how risk factors combine—additive, interactive, or threshold-based. Results expose which assumption matches reality.
-
-## 2. Data Preparation & Encoding (70–90 words)
-
-**Gender** transformed to binary 0/1, **Profession** categories mapped to integers 0-N preserving category distinctions without implying order. **Depression** target encoded Yes=1, No=0. 
-
-The **80-20 split** maintained original depression prevalence in both sets—if 35% depressed overall, both train and test hold ~35%. Why stratify? Random splits might accidentally create 40% depressed training data and 30% test data, training models on unrepresentative distributions. 
-
-**StandardScaler** addressed scale disparity: without normalization, a 10-year Age difference (10 units) would dominate a 1-point Work Pressure difference (1 unit) in distance metrics despite Pressure potentially mattering more for depression.
+Categorical variables underwent label encoding: Gender (Male=1, Female=0), Profession (0-N integer mapping), Degree levels (ordinal encoding). Depression target binary-encoded (Yes=1, No=0). Data split 80-20 train-test with stratification preserving class proportions (prevents training on 40% depressed, testing on 30%). StandardScaler normalized features: prevents Age's 20-60 range dominating Work Pressure's 1-5 scale in distance-based algorithms. Scaled training mean=0, SD=1 for each feature; identical transformation applied to test set using training statistics.
 
 ### Data Preparation Code
 
@@ -531,13 +442,9 @@ Class distribution in training set:
 
 ---
 
-## 3. Description of Algorithms Used (80–100 words)
+## 3. Description of Algorithms Used
 
-**Decision Trees** operated by repeatedly dividing our professional cohort into progressively smaller, more homogeneous subgroups. The algorithm examined each feature—sleep duration, work pressure, job satisfaction—to determine which splits best separated depressed from non-depressed individuals. Our tree's initial division occurred at sleep duration around 5.5 hours, with the sleep-deprived branch showing substantially higher depression prevalence.
-
-**KNN** took a fundamentally different approach, examining each individual's five most similar neighbors across all measured dimensions. When predicting depression for someone new, the algorithm polled those five closest matches and adopted the majority outcome.
-
-**SVM** approached the problem geometrically, transforming our multi-dimensional professional characteristic space and searching for the clearest possible boundary that separates the two groups while maximizing the buffer zone between them.
+Decision Tree (max_depth=8, min_samples_split=5) recursively partitions feature space, selecting splits maximizing information gain. Initial split on Sleep Duration≈5.5 hours separated high-risk (sleep-deprived) from lower-risk branches. K-Nearest Neighbors (k=5) classifies via majority vote among five most similar training instances using Euclidean distance in scaled feature space. Support Vector Machine (RBF kernel, C=1.0, gamma='scale') identifies maximum-margin hyperplane separating classes in kernel-transformed space, handling non-linear boundaries through radial basis function projection.
 
 ---
 
