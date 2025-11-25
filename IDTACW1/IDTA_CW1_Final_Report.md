@@ -15,70 +15,26 @@
 ## Student No: [Your Student Number]
 
 
-INTRODUCTION
+## INTRODUCTION
 
-This coursework analyzes mental health among working professionals using the Depression Professional Dataset containing 4,000 records with 14 attributes. These attributes capture workplace and lifestyle factors affecting mental wellbeing, including work pressure, job satisfaction, sleep patterns, and financial stress.
+This coursework examines the mental health of working personal. Here we use the Depression Professional Dataset that has 4000 records and 14 attributes. Attributes like Workplace and lifestyle are included. These attributes shows affect on mental health that also includes job satisfaction, work pressure and financial relief.
 
-The dataset is complete with no missing values. It includes eight numerical variables (Age, Work Pressure, Job Satisfaction, Sleep Duration, Dietary Habits, Suicidal Thoughts frequency, Work Hours, Financial Stress) and six categorical variables (Name, Gender, Profession, Degree, Family Mental Health History, Depression status).
+The dataset includes eight numerical variables and six categorical variables. It is clean and good for model creation. The eight numerical variables are Age, Work Pressure, Job Satisfaction, Sleep Duration, Dietary Habits, Suicidal Thoughts frequency, Work Hours, Financial Stress and the six categorical variables include Name, Gender, Profession, Degree, Family Mental Health History, Depression status.
 
-My analysis goals were to identify key depression risk factors, build accurate prediction models, understand variable interactions, discover risk factor patterns, and group professionals by mental health profiles. I completed five tasks: descriptive analytics, classification using three algorithms, regression analysis, association rule mining, and clustering to identify professional groups.
-
-
-## Table of Contents
-
-- INTELLIGENT DATA ANALYTICS
-- INTRODUCTION
-- TASK 1: DESCRIPTIVE ANALYTICS
-  - 1. INTRODUCTION
-  - 2. DATA PREPARATION AND ATTRIBUTE IDENTIFICATION
-  - 3. NUMERICAL ATTRIBUTE SUMMARY
-  - 4. CATEGORICAL ATTRIBUTE SUMMARY
-  - 5. VISUALIZATIONS
-  - 6. SUMMARY & LINK FORWARD
-- TASK 2: CLASSIFICATION
-  - 1. INTRODUCTION TO TASK
-  - 2. DATA PREPARATION & ENCODING
-  - 3. DESCRIPTION OF ALGORITHMS USED
-  - 4. MODEL TRAINING & EVALUATION METRICS
-  - 5. COMPARISON OF ALGORITHMS
-  - 6. SUMMARY & LINK FORWARD
-- TASK 3: REGRESSION
-  - 1. INTRODUCTION TO TASK
-  - 2. DATA PREPARATION
-  - 3. REGRESSION ALGORITHMS APPLIED
-  - 4. EVALUATION METRICS
-  - 5. COMPARISON OF MODELS
-  - 6. SUMMARY
-- TASK 4: ASSOCIATION RULE MINING
-  - 1. INTRODUCTION
-  - 2. DATA PREPARATION
-  - 3. APRIORI ALGORITHM APPLICATION
-  - 4. GENERATED RULES & METRICS
-  - 5. INTERPRETATION OF RULES
-  - 6. SUMMARY
-- TASK 5: CLUSTERING
-  - 1. INTRODUCTION
-  - 2. DATA PREPARATION & SCALING
-  - 3. DETERMINING OPTIMAL CLUSTERS
-  - 4. K-MEANS RESULTS
-  - 5. AGGLOMERATIVE CLUSTERING RESULTS
-  - 6. COMPARISON OF ALGORITHMS
-  - 7. FINAL SUMMARY
-- OVERALL CONCLUSION
-- REFERENCES
+Here we completed the required tasks that include descriptive analytics, classification, association rule mining, regression analysis, and clustering to identify professional groups. The goal of our analysis is to identify the key depression risk factors, build accurate prediction models, understand variable correlations, discover risk patterns, and group professionals by their mental health profiles.
 
 
 # TASK 1: DESCRIPTIVE ANALYTICS
 
 ## 1. Introduction
 
-The dataset contains 4,000 records with 14 attributes capturing workplace and lifestyle factors. Eight numerical variables include Age, Work Pressure, Job Satisfaction, Sleep Duration, Dietary Habits, Suicidal Thoughts frequency, Work Hours, and Financial Stress. Six categorical variables cover Name, Gender, Profession, Degree, Family Mental Health History, and Depression status.
+The dataset capturs the workplace and lifestyle factors that contains 4,000 records and 14 attributes. The eight numerical variable include Age, Work Pressure, Job Satisfaction, Sleep Duration, Dietary Habits, Suicidal Thoughts Frequency, Work Hours, and Financial Stress. the six categorical variables include cover name, Gender, Profession, Degree, Family Mental Health History,and Depression Status.
 
-With no missing values, I performed complete analysis. Descriptive statistics reveal distributions while visualizations show relationships between depression and key predictors like sleep patterns, work pressure, financial burden, and family history.
+We performed complete analysis with no missing values. Visualizations show relationships between depression and key predictors like sleep patterns, work pressure, financial burden, and family history where as Descriptive statistics reveal distributions.
 
 ## 2. Data Preparation and Attribute Identification
 
-The data had no missing values, requiring no preprocessing. Numerical attributes include workplace metrics (Work Pressure, Job Satisfaction, Work Hours on 1-5 scales) and lifestyle indicators (Sleep Duration hours, Dietary Habits, Financial Stress). Categorical variables cover demographics (Gender, Profession, Degree) and mental health indicators (Family History, Suicidal Thoughts, Depression status).
+The Data required no preprocessing as it had no missing values. The numerical attributes include workplace metrics like work pressure, job satisfaction, work hours on 1-5 scales and lifestyle indicators like sleep duration hours, dietary habits, financial stress. Categorical variables cover demographics like gender, profession, degree and mental health indicators like family history, suicidal thoughts, depression status.
 
 **Code Implementation:**
 
@@ -93,7 +49,7 @@ print(f"Categorical Attributes ({len(categorical_cols)}): {categorical_cols}")
 
 ## 3. Numerical Attribute Summary
 
-Table 1 reveals concerning patterns. Age ranges 18-60 years (mean=42.17, SD=11.46), capturing mid-career professionals at peak family and career pressure. Work Pressure averages 3.02/5 (SD=1.42), showing wide variation—some face extreme stress, others moderate loads. Job Satisfaction mirrors this inversely (mean=3.02, SD=1.42). Work Hours average 5.93 (SD=3.77), ranging 0-12, indicating some professionals face excessive overtime. Financial Stress averages 2.98/5, showing widespread moderate-to-high anxiety. Quartile values (Q1=35, median=43, Q3=51.75) confirm concentration in the 35-52 age range where demands peak.
+Table 1 reveals concering patterns. Age range from 18=60 years, capturing mid career professionals at peak family and career pressure. Work pressure averages about 3.02/5, showing wide variation among some peoples' face extreme stress, others moderate loads. Job satisfaction shows opposite results while compared to the previous ones. Working hours average is 5.93, ranging from 0-12 which indicates some professionals working excessive overtime. Financial stress averages abour 2.95/5, indicates moderate to high anxiety widely. In the 35-52 age where demand is high, the quartile values show large numbers.
 
 **Code Implementation:**
 
@@ -135,6 +91,8 @@ stats_table.to_csv('output_files/Task1a_Numerical_Statistics.csv', index=False)
 
 Table 2 shows balanced gender (51.9% male). Sleep Duration mode is 7-8 hours (25.8%), meaning 74.2% get non-optimal sleep—widespread sleep problems. Dietary Habits mode is "unhealthy" (34.7%), compounding mental health risks. Depression prevalence is 9.9% (class imbalance). Family History and Suicidal Thoughts each ~50%, indicating genetic vulnerability and acute symptoms affect half the population—explaining why workplace interventions alone may be insufficient.
 
+It can be seen that in Table 2, gender is balanced. Around 74.2% personals get non-optimal sleep problems because the sleep duration is 7-8 hours. About a third of people have unhealthy eating habits that makes mental health harder to manage
+
 **Table 2: Categorical Attributes Summary Statistics**
 
 | Attribute | Unique Values | Mode | Mode Frequency | Mode % |
@@ -157,8 +115,6 @@ Figure 2 reveals depression patterns across variables. Sleep Duration shows depr
 ## 6. Summary & Link Forward
 
 Descriptive analysis identified sleep deprivation, high work pressure (≥4), extreme financial stress, and Family History+Suicidal Thoughts combination as depression correlates. Relationships show threshold and compound effects. Classification tests whether these patterns enable individual-level prediction.
-
----
 
 # TASK 2: CLASSIFICATION
 
@@ -253,21 +209,20 @@ Decision Tree offers interpretability (trace exact prediction logic) but lowest 
 
 Classification validates depression predictability (F1=82.19%), confirming correlations translate to individual forecasts. Regression examines age-related patterns testing career-stage coupling with stress profiles.
 
----
-
 # TASK 3: REGRESSION
 
 ## 1. Introduction to Task
 
-Regression tests age prediction from work/mental health characteristics. Strong prediction implies stage-specific interventions needed; weak performance indicates age-independent vulnerability. Linear Regression assumes additive effects; Polynomial Regression captures non-linearities and interactions.
+We use regression to calculate the age of a person by analyzing their mental health. If the age is estimated accurately, it means different age groups need different types of support. If it does not predict correctly, it would mean it would affect people in the same way without any difference in age.
 
+Linear regression only looks at simple and additive problems, whereas polynomial regression catches complex and non linear patterns
 ## 2. Data Preparation
 
-Features scaled to ensure comparable unit changes across predictors. Age target remained unscaled for interpretable year predictions. 80-20 train-test split prevents overfitting assessment.
+To make sure the predictors can be compared correctly, all the features are scaled. To make sure the predictions are in real years, the age variable is left unscaled. To evaluate the model and decrease the risk of overfitting, we are using the 80-20 train test split.
 
 ## 3. Regression Algorithms Applied
 
-Linear Regression fitted all 13 scaled features simultaneously. Polynomial Regression transformed features into 105 polynomial terms including squared features and pairwise interactions, capturing non-linear relationships at risk of overfitting.
+The linear regression model uses all 13 scaled features at the same time. Polynomial regression turned these features into 105 different teams by also adding squared features inorder to capture more complex and non linear patterns. But doing the above steps may also risk the chances of overfitting.
 
 **Code Implementation:**
 
@@ -297,7 +252,7 @@ poly_r2 = r2_score(y_test, y_pred_poly)
 
 ## 4. Evaluation Metrics
 
-Linear Regression yielded MAE=8.32 years, RMSE=10.06, R²=0.25—meaning the model only explains 25% of age variance. In practical terms, predictions are off by about 8-10 years on average, which is too imprecise for clinical use. This tells us something important: age isn't strongly predicted by mental health variables because depression affects all age groups similarly.
+The model explains only 25% of age varience because linear regression yielded MAE=8.32 years, RMSE=10.06 and R²=0.25. In practical terms, age predictions are off by roughly 8-10 years, which is not exactly accurate for clinical use. By this we can say that age is not predicted by mental health because depression affects people of all age groups in the same way.
 
 Polynomial Regression showed MAE=8.30, RMSE=10.19, R²=0.23—actually slightly worse. The minimal improvement despite adding 8× more features (13→105) suggests the relationships are mostly linear without strong non-linearities. Polynomial models capture curves and interactions, but here they found none, confirming age-depression relationships don't follow complex patterns. The low R² across both models indicates 75% of age variation comes from factors outside this dataset—likely genetics, life history, and other unmeasured variables.
 
@@ -320,21 +275,24 @@ Linear Regression (R²=0.25) shows weak age-mental health coupling. Polynomial f
 
 Low R² confirms age operates independently from stress-depression-sleep profiles—depression strikes across career stages. Contrasts with strong depression prediction (F1=82%), demonstrating outcome prediction differs from demographic prediction. Association mining discovers compound risk patterns.
 
----
-
 # TASK 4: ASSOCIATION RULE MINING
 
 ## 1. Introduction
 
-Association Rule Mining discovers which attribute combinations co-occur beyond chance, revealing compound vulnerability profiles. Apriori algorithm identifies frequent itemsets (appearing in ≥10% of cases) and generates directional rules quantified by support (prevalence), confidence (conditional probability), and lift (odds ratio versus independence).
+Association Rule Mining is used to identify the attributes/traits that occour together more than by chance. This helps to identify patterns in combined attributes. Apriori algorithm can be applied to extract frequent itemsets that appear more than 10% of times. Using the itemsets, we can generate directional rules by metrics like support, confidence and lift.
+- Support: How often an item or itemset appears in the dataset.
+- Confidence: How often rule X → Y is true when X occurs.
+- Lift: How much more likely Y is bought when X is bought, compared to random chance.
 
 ## 2. Data Preparation
 
-Numerical attributes binned into categories: Age (18-25, 25-35, 35-45, 45-55, 55+), Work Pressure/Job Satisfaction/Financial Stress (Low/Medium/High). One-hot encoding created 42 binary features for Apriori processing.
+One-hot encoding resulted in 42 binary features for processing. Categorization is applied to numerical attributes. Changes as below:- 
+- Age attribute is changes to age ranges like 18-25, 25-35, so on...
+- Work Pressure, Job Satisfaction and Financial Stress are categorized to Low/Medium/High
 
 ## 3. Apriori Algorithm Application
 
-Apriori with `min_support=0.10` found 127 frequent itemsets. Top patterns: High Work Pressure (51.6%), Low Job Satisfaction (45.9%). These reveal widespread workplace dissatisfaction across the professional population.
+Apriori algorithm application found 127 frequent itemsets for min_support=0.10. Few of Top patterns are High Work Pressure and Low Job Satisfaction. These indicate that there is workplace dissatisfaction among professional profiles.
 
 **Code Implementation:**
 
@@ -365,7 +323,7 @@ rules = rules.sort_values('lift', ascending=False)
 
 ## 4. Generated Rules & Metrics
 
-Generated 248 rules (`min_confidence=0.30`). Top rules show lift=1.17-1.24—combinations occur 17-24% more often than chance, representing hundreds of individuals with compound vulnerabilities. Top rule (Suicidal Thoughts=Yes, Depression=No → Age 45-55, lift=1.24, support=14.6%) reveals 584 middle-aged professionals with suicidal ideation despite no diagnosis—critical at-risk group needing urgent intervention. Another rule (Gender=Female, Pressure=Low → Family History=Yes, Depression=No, lift=1.23) shows genetic vulnerability manifests even in lower-stress environments, indicating biological factors operate independently of workplace conditions.
+A total of 248 rules are generated with min_confidence=0.30. A lift of 1.17 to 1.24 is seen among top rules. This explains that hundreds of individuals have similar vulnerabilities. Top rule shows that even if they don't have a diagnosis, about 584 middle-aged working adults have suicidal thoughts. Other rule shows that despite of having low stress settings, few are affected with generic vulnerabilities, indicating that biology can indicate risk on by itself, independent of the workplace conditions.
 
 **Table 5: Top 5 Association Rules**
 
@@ -379,27 +337,28 @@ Generated 248 rules (`min_confidence=0.30`). Top rules show lift=1.17-1.24—com
 
 ## 5. Interpretation of Rules
 
-The top rules identify compound vulnerability patterns that have practical importance. One key finding is that sleep deprivation tends to cluster together with overwork and financial stress. These problems don't occur randomly—when someone has one of these issues, they're more likely to have the others too. This means interventions need to address multiple areas at once rather than focusing on just one problem. Another significant pattern involves family history and suicidal ideation. When both factors are present, the risk multiplies, identifying a very high-risk group needing immediate clinical attention. On the positive side, job satisfaction appears to have a protective effect. Even when people face high work pressure, having high job satisfaction helps buffer against depression. This suggests that programs aimed at improving how employees feel about their jobs could prevent burnout even in demanding environments.
+The top rules shows clear patterns for combined culnerabilities. Issues like less sleep, overworking and finnacial stress appear together. Indicating that these issues occour together rather than separately. Another strong pattern is the closeness of family history and suicidal thoughts. This says a high-risk peoples needing urgent attention. One of the positive patterns would be that high job satisfaction reduces the issues like work pressure, showing reluctance towards depression.
 
 ## 6. Summary
 
-ARM revealed non-random risk factor clustering: sleep deprivation packages with overwork, family history amplifies acute symptoms, and job satisfaction buffers work pressure. Different professional profiles need tailored interventions based on specific compound vulnerabilities.
-
----
+ARM algorithms helped in identifying non-random risk factors. Various professional profiles need specific attentions based on their vulnerabilities. Few patterns are:-
+- Low sleep aligns with overwork.
+- Family history increases intensity of current issues.
+- Job satisfaction reduces work pressure.
 
 # TASK 5: CLUSTERING
 
 ## 1. Introduction
 
-The association rules suggested distinct professional profiles—some face multiple stressors, others have genetic vulnerabilities, still others maintain protective factors despite high pressure. Clustering tests whether these conceptual profiles translate into real, statistically identifiable groups. I used K-Means (fixed cluster count) and Agglomerative Clustering (hierarchical grouping) to determine whether mental health archetypes represent genuine subpopulations or arbitrary categories.
+The association rules gave many different professional profiles. Some with facing multiple stressors, and others having genetic vuinerabilities. While some others maintaining protective factors despite high pressure. Clustering models help in testing if these multiple conceptual profiles actually exist or not in the data. K-Means and Agglomerative Clustering algorithms are used to determine if mental  health archtypes actually correspond to a real group of people or some non-existing personalities.
 
 ## 2. Data Preparation & Scaling
 
-Clustering uses distance calculations in multi-dimensional space. Without scaling, variables on larger scales would dominate (e.g., a 20-year age difference would swamp a 1-point work pressure difference). StandardScaler equalized each feature's contribution, ensuring one standard deviation change in any variable contributes equally. Label encoding converted categorical variables (Profession: Engineer=1, Doctor=2). All 14 attributes entered scaled.
+Clustering is based on distance calculations and grouping less distanced data points. Scaling is required to consistently measure distances in data points, such a scaling is done using StandardScaler. It ensures that change in each variable's unit standard deviation is same. Lable encoding was used to encode non-numeric variables like Profession. This is applied to all the 14 attrinutes.
 
 ## 3. Determining Optimal Clusters (Elbow + Silhouette)
 
-Tested k=2 to k=10. Elbow method showed inertia dropping rapidly until k=4, then improvements became smaller. Silhouette score peaked at k=3 (0.423), indicating best-defined clusters. Both methods agreed: 3 clusters is optimal. Moderate silhouette (0.42) shows groups are meaningful but have some overlap—fuzzy boundaries rather than hard separations.
+These observations were made while testing from k=2 to k=10. Untill k=4, inertia dropped rapidly for Elbow method. Later improvements became smaller. At k=3, Silhouette score peaked, hence indicating best-defined clusters. After observing both methods, 3 clusters looks optimal. A moderate silhouette of 0.42 indicates that the groups do exist and are meaningful. But they are overlapping, showing that the boundaries between them are not clear.
 
 **Code Implementation:**
 
@@ -434,7 +393,7 @@ agg_labels = agg_clust.fit_predict(X_clust_scaled)
 
 ## 4. K-Means Results
 
-K-Means with k=3 identified three profiles with unequal sizes: 31%, 47%, and 22%. Silhouette=0.123, Davies-Bouldin=2.43 indicate acceptable separation. Depression prevalence varies significantly across clusters, confirming they capture meaningful risk-level differences rather than arbitrary groupings.
+Three profiles with unequal sizes: 31%, 47% and 22% were given by K-Means with k=3. Silhoutte and Davies-Bouldin scores of 0.123 and 2.43 respectively shows acceptable separation of profiles. Depression rates change a lot between clusters, which shows that the groups are meaningful, they are not random. 
 
 **Table 6: Clustering Results Comparison**
 
@@ -449,7 +408,7 @@ K-Means with k=3 identified three profiles with unequal sizes: 31%, 47%, and 22%
 
 ## 5. Agglomerative Clustering Results
 
-Agglomerative Clustering (Ward linkage, k=3) produced 78% agreement with K-Means. Dendrogram revealed hierarchical structure with natural division points. Similar metrics (Silhouette=0.101, DB=2.73) strengthen confidence that these three groups are real—not artifacts of one method.
+Agglomerative Clustering resulted 78% agreement with K-Means algorithm. The below available dendrogram shows hierarchical structure with natural division points. Metrics like Silhouette (0.101) and DB (2.73) proved that these 3 groups are real and are not artifacts of same method. 
 
 **Figure 7: Dendrogram (Agglomerative Clustering)**
 
@@ -457,15 +416,11 @@ Agglomerative Clustering (Ward linkage, k=3) produced 78% agreement with K-Means
 
 ## 6. Comparison of Algorithms
 
-Strong agreement between K-Means and Agglomerative (78% same assignments) validates the three-group structure. Nearly identical quality metrics (silhouette ~0.10-0.12) confirm both see the same patterns. The 22% disagreement occurs at cluster boundaries—people who don't clearly belong to one group. This tells us the archetypes are real but some individuals resist single-box categorization. Practical interventions should use probability-based approaches rather than treating cluster membership as absolute.
+The 3 group structure is validated by the similarities between K-Means and Agglomerative methods (78% similarity). Low difference between Silhouette metric scores of both methods prove the consistency in result. the inaccuracy occours due to people belonging to multiple groups. This shows that it is not mandatory that people belong to one group. 
 
 ## 7. Final Summary
 
-## 7. Final Summary
-
-Clustering validated three professional archetypes with distinct depression rates. Silhouette=0.12 indicates real groups with overlap. Understanding group membership enables targeted interventions addressing specific risk combinations. Agreement between two methods confirms patterns reflect genuine structure rather than methodological artifacts.
-
----
+Three professional archtypes with different depression rates are validated by Clustering. Understanding groups uniqueness enables us in identifying specific risk combinations. The similarities in scores of two methods confirms that the results are real and not methodological artifacts.
 
 # OVERALL CONCLUSION
 
@@ -479,8 +434,6 @@ The regression analysis revealed an important insight: age has almost no predict
 
 **Future Work:** Longitudinal data to establish causation. Additional variables (social networks, resilience, coping strategies) to improve predictions. Independent dataset validation. Cluster-targeted intervention trials to test personalized approaches. Deep learning to reveal complex non-linear interactions.
 
----
-
 ## REFERENCES
 
 University of Portsmouth Moodle - IDTA Module Materials and Lab Notebooks.  
@@ -488,32 +441,3 @@ Python Documentation - Pandas, NumPy, Scikit-learn (pandas.pydata.org, numpy.org
 Seaborn Documentation - Statistical Visualization (seaborn.pydata.org)  
 MLxtend Documentation - Association Rule Mining (rasbt.github.io/mlxtend)  
 James, G. et al. (2021). *An Introduction to Statistical Learning* (2nd ed.). Springer.
-
----
-
-**WORD COUNT BREAKDOWN:**
-- Task 1: ~600 words (Introduction 150, Prep 100, Numerical 140, Categorical 80, Viz 170, Summary 80)
-- Task 2: ~590 words (Intro 70, Prep 80, Algorithms 90, Metrics 130, Comparison 120, Summary 70)
-- Task 3: ~540 words (Intro 70, Prep 70, Algorithms 100, Metrics 120, Comparison 90, Summary 70)
-- Task 4: ~600 words (Intro 70, Prep 80, Apriori 100, Rules 130, Interpretation 110, Summary 70)
-- Task 5: ~620 words (Intro 70, Prep 85, Optimal 120, K-Means 95, Agg 90, Comparison 90, Summary 75)
-- Conclusion: ~250 words
-
-**TOTAL: ~3,200 words** (excluding tables/figures/code as per guidelines)
-
----
-
-**FIGURES & TABLES REQUIRED:**
-- Table 1: Task1a_Numerical_Statistics.csv
-- Table 2: Task1a_Categorical_Statistics.csv
-- Figure 1: Age boxplot (from Task1b)
-- Figure 2: Combined 5 visualizations (Task1b_Visualizations.png)
-- Table 3: Task2_Classification_Results.csv
-- Figure 3: Task2_Confusion_Matrices.png
-- Table 4: Task3_Regression_Results.csv
-- Figure 4: Task3_Regression_Predictions.png
-- Table 5: Task4_Association_Rules.csv
-- Table 6: Task5_Clustering_Results.csv
-- Figure 5: Task5_Elbow_Silhouette.png
-- Figure 6: Task5_Clustering_Visualization.png
-- Figure 7: Task5_Dendrogram.png
