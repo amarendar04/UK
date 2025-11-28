@@ -91,7 +91,9 @@ stats_table.to_csv('output_files/Task1a_Numerical_Statistics.csv', index=False)
 
 Table 2 shows balanced gender (51.9% male). Sleep Duration mode is 7-8 hours (25.8%), meaning 74.2% get non-optimal sleep—widespread sleep problems. Dietary Habits mode is "unhealthy" (34.7%), compounding mental health risks. Depression prevalence is 9.9% (class imbalance). Family History and Suicidal Thoughts each ~50%, indicating genetic vulnerability and acute symptoms affect half the population—explaining why workplace interventions alone may be insufficient.
 
-It can be seen that in Table 2, gender is balanced. Around 74.2% personals get non-optimal sleep problems because the sleep duration is 7-8 hours. About a third of people have unhealthy eating habits that makes mental health harder to manage
+It can be seen that in Table 2, gender is balanced. Around 74.2% personals get non-optimal sleep problems because the sleep duration is 7-8 hours. About a third of people have unhealthy eating habits that makes mental health harder to manage. The results show that 9.9% of the group is affected by depression due to an unbalanced diet.
+
+About half the group has family history of mental illness. This represents that workplace focused programs aren't enough, some of the risk factors are from beyond workplace. 
 
 **Table 2: Categorical Attributes Summary Statistics**
 
@@ -252,9 +254,9 @@ poly_r2 = r2_score(y_test, y_pred_poly)
 
 ## 4. Evaluation Metrics
 
-The model explains only 25% of age varience because linear regression yielded MAE=8.32 years, RMSE=10.06 and R²=0.25. In practical terms, age predictions are off by roughly 8-10 years, which is not exactly accurate for clinical use. By this we can say that age is not predicted by mental health because depression affects people of all age groups in the same way.
+The model explains only 25% of age varience because linear egression yielded MAE=8.32 years, RMSE=10.06 and R²=0.25. In practical terms, age predictions are off by roughly 8-10 years, which is not exactly accurate for clinical use. By this we can say that age is not predicted by mental health because depression affects people of all age groups in the same way.
 
-Polynomial Regression showed MAE=8.30, RMSE=10.19, R²=0.23—actually slightly worse. The minimal improvement despite adding 8× more features (13→105) suggests the relationships are mostly linear without strong non-linearities. Polynomial models capture curves and interactions, but here they found none, confirming age-depression relationships don't follow complex patterns. The low R² across both models indicates 75% of age variation comes from factors outside this dataset—likely genetics, life history, and other unmeasured variables.
+Polynomial regression shows MAE=8.30, RMSE=10.06, and R²=0.23 which is worse. Even after adding 13 to 105 features the model is not at all improved. By this we can say that the patterns in the data are mostly linear and not curves. We can also say that age and depression does'nt have a complex relation. The low R² says that 75% of age variation is explained by factors that are not included in the dataset.
 
 **Table 4: Regression Performance Metrics**
 
@@ -269,11 +271,13 @@ Polynomial Regression showed MAE=8.30, RMSE=10.19, R²=0.23—actually slightly 
 
 ## 5. Comparison of Models
 
-Linear Regression (R²=0.25) shows weak age-mental health coupling. Polynomial features (R²=0.23) perform worse despite 8× feature expansion (13→105)—complexity doesn't help when fundamental relationships are weak. Figure 4 shows predictions scatter widely around actual ages with no clear pattern. Both models predict near mean age (~42 years) regardless of inputs, learning little beyond "guess the average." Low R² means 75% of age variation comes from unmeasured factors—genetics, life history, career trajectory.
+Linear regression tells us that age and mental health are weakly related. When we increased the features from 13 to 105 the model got even worse. By this we can say that adding complex features does not mean it helps with basic operations. According to Figure 4 we can say that the predictions are all over without specific pattern and regardless of the input both the models gives the same output which is 42. 
+
+The low R² value indicates that around 75% of the age difference is explained by factors that are not included in the table like genetics, etc.
 
 ## 6. Summary
 
-Low R² confirms age operates independently from stress-depression-sleep profiles—depression strikes across career stages. Contrasts with strong depression prediction (F1=82%), demonstrating outcome prediction differs from demographic prediction. Association mining discovers compound risk patterns.
+Low R² indicates that age does not actually depend on stress, depression, or sleep cycle. Depression can occur in a person at any point. By this we can assume that predicting someones age is difficult that predicting depression. The association rules also say that risk factors also seem to appear together.
 
 # TASK 4: ASSOCIATION RULE MINING
 
